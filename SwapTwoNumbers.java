@@ -11,7 +11,7 @@ class SwapTwoNumbers
 
 		System.out.print("Enter value of a: ");
 		a=sc.nextInt();
-		System.out.print("Enter value of a: ");
+		System.out.print("Enter value of b: ");
 		b=sc.nextInt();
 
 		System.out.println("Before swapping - a: "+ a +", b: " + b);
