@@ -1,0 +1,21 @@
+Description=Tomcat 9 Instance 2
+After=network.target
+
+[Service]
+Type=forking
+
+User=tomcat2
+Group=tomcat2
+
+Environment="JAVA_HOME=/java/java-8"
+Environment="JAVA_OPTS=-Djava.security.egd=file:///dev/urandom"
+Environment="CATALINA_BASE=/opt/tomcat2"
+Environment="CATALINA_HOME=/opt/tomcat2"
+Environment="CATALINA_PID=/opt/tomcat2/temp/tomcat.pid"
+Environment="CATALINA_OPTS=-Xms256M -Xmx512M -server -XX:+UseParallelGC"
+
+ExecStart=/opt/tomcat2/bin/startup.sh
+ExecStop=/opt/tomcat2/bin/shutdown.sh
+
+[Install]
+WantedBy=multi-user.target
